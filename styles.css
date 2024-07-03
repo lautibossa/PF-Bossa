@@ -1,0 +1,171 @@
+whtml {background-color: #f5d9ab;}
+body{
+    font-family: sans-serif;
+    margin: 0;
+    background-color: rgb(252, 248, 246);
+    
+}
+
+a {
+    text-decoration: none ;
+    color: beige;
+}
+
+header { 
+         background-color: #1e1e1e;
+         display:flex;
+         min-height: 70px;
+         justify-content: space-between;
+         align-items: center;
+         padding: 0px;
+}
+
+.logo {
+    display:flex;
+    align-items: center;
+}
+.imagen-redonda {border-radius: 50%; height: 70px;
+                 margin: 10px;}
+.nav-link {position: right;}
+.nombre-empresa {color: white;
+                 font-style: italic;
+                 font-family: Georgia, 'Times New Roman', Times, serif;
+                }
+                 
+nav a {font-size: 20px;
+        font-weight: 600;
+         margin: 7px;
+         
+        transition: 1s;}
+
+nav a:hover {
+    color: coral;
+    border-color: 3px coral;
+    transition: 2s;
+}
+
+@media (max-width:700px){
+    header{
+        flex-direction: column;
+        
+    }
+    nav {
+        padding: 10px 0px;
+    }
+}
+
+.row {
+    box-sizing: border-box;
+    display: flex;
+    padding: 5px;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+    }
+
+.row img {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.colum {
+    flex: 25%;
+    padding: 10px;
+}
+
+.colum img {
+    margin-top: 17px;
+    filter: brightness(0.95);
+    transition: 1s;
+}
+@media (max-width: 800px){
+    .colum{
+        flex: 40%;
+    }
+    .row{
+        margin-left: 10%;
+    margin-right: 10%;
+    }
+}
+@media (max-width: 600px){
+    .colum{
+        flex: 100%;
+    }
+}
+
+.pie-pagina{
+    width: 100%;
+    background-color: #1e1e1e;
+    color: beige;
+    display: flex;
+     
+    
+}
+
+.pie-pagina .grupo-1{
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+    
+}
+.box2 a {
+    margin: 0 15px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: coral;
+    color: beige;
+    border-radius: 50%;
+    transition: 1s;
+    
+}
+.box3{
+    text-align: center;
+    background-color: coral;
+    height: 50px;
+    line-height: 50px;
+    
+}
+
+.box2 a:hover{
+    background-color: beige;
+    color: coral;
+    border-radius: 50%;
+    transition: 2s;
+}
+
+
+.colum img:hover{
+    transform: scale(1.05);
+    transition: 1s;
+    
+    
+}
+.colum img:hover {
+    filter: brightness(1.10);
+    transition: 3;s
+}
+
+.logo :hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+.nombre-empresa:hover{
+    color: coral;
+    transition: 7s;
+    
+}
+.nombre-empresa{
+    transition: 3s;
+}
+.imagen-redonda{
+    transition: 3s;
+}
+ .box1 p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ }
