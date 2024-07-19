@@ -1,0 +1,162 @@
+html {
+    background-color: #f5d9ab;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: rgb(252, 248, 246);
+}
+
+a {
+    text-decoration: none;
+    color: beige;
+}
+
+header { 
+    background-color: #1e1e1e;
+    display: flex;
+    min-height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        .imagen-redonda {
+            border-radius: 50%;
+            height: 70px;
+            margin: 10px;
+            transition: 3s;
+        }
+        .nombre-empresa {
+            color: white;
+            font-style: italic;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            transition: 3s;
+
+            &:hover {
+                color: coral;
+                transition: 7s;
+            }
+        }
+        &:hover {
+            transform: scale(1.05);
+            transition: 1s;
+        }
+    }
+}
+
+.nav-link {
+    position: right;
+}
+
+nav a {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 7px;
+    transition: 1s;
+
+    &:hover {
+        color: coral;
+        border-color: 3px coral;
+        transition: 2s;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+    }
+    nav {
+        padding: 10px 0;
+    }
+}
+
+.row {
+    box-sizing: border-box;
+    display: flex;
+    padding: 5px;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+
+    img {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        filter: brightness(0.95);
+        transition: 1s;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: 1s;
+            filter: brightness(1.10);
+            transition: 3s;
+        }
+    }
+    .colum {
+        flex: 25%;
+        padding: 10px;
+
+        @media (max-width: 800px) {
+            flex: 40%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        @media (max-width: 600px) {
+            flex: 100%;
+        }
+    }
+}
+
+.pie-pagina {
+    width: 100%;
+    background-color: #1e1e1e;
+    color: beige;
+    display: flex;
+
+    .grupo-1 {
+        width: 100%;
+        margin-left: 5%;
+        margin-right: 5%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+        padding: 45px 0;
+
+        .box2 {
+            a {
+                margin: 0 15px;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                background-color: coral;
+                color: beige;
+                border-radius: 50%;
+                transition: 1s;
+
+                &:hover {
+                    background-color: beige;
+                    color: coral;
+                    border-radius: 50%;
+                    transition: 2s;
+                }
+            }
+        }
+    }
+}
+
+.box3 {
+    text-align: center;
+    background-color: coral;
+    height: 50px;
+    line-height: 50px;
+}
+
+.box1 p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
