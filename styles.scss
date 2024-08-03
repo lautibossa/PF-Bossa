@@ -1,5 +1,14 @@
+// Variables
+$bg-color: #f5d9ab;
+$text-color: beige;
+$header-bg: #1e1e1e;
+$footer-bg: #1e1e1e;
+$hover-color: coral;
+$link-hover-color: $hover-color;
+
+// Estilos globales
 html {
-    background-color: #f5d9ab;
+    background-color: $bg-color;
 }
 
 body {
@@ -10,11 +19,17 @@ body {
 
 a {
     text-decoration: none;
-    color: beige;
+    color: $text-color;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: $link-hover-color;
+    }
 }
 
-header { 
-    background-color: #1e1e1e;
+// Header
+header {
+    background-color: $header-bg;
     display: flex;
     min-height: 70px;
     justify-content: space-between;
@@ -24,126 +39,130 @@ header {
     .logo {
         display: flex;
         align-items: center;
+
         .imagen-redonda {
             border-radius: 50%;
             height: 70px;
             margin: 10px;
-            transition: 3s;
+            transition: transform 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.05);
+            }
         }
+
         .nombre-empresa {
             color: white;
             font-style: italic;
             font-family: Georgia, 'Times New Roman', Times, serif;
-            transition: 3s;
+            transition: color 0.3s ease-in-out;
 
             &:hover {
-                color: coral;
-                transition: 7s;
+                color: $hover-color;
             }
         }
-        &:hover {
-            transform: scale(1.05);
-            transition: 1s;
+    }
+
+    nav {
+        display: flex;
+
+        a {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: $hover-color;
+            }
         }
     }
 }
 
-.nav-link {
-    position: right;
-}
-
-nav a {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 7px;
-    transition: 1s;
-
-    &:hover {
-        color: coral;
-        border-color: 3px coral;
-        transition: 2s;
-    }
-}
-
-@media (max-width: 700px) {
-    header {
-        flex-direction: column;
-    }
-    nav {
-        padding: 10px 0;
-    }
-}
-
+// Grid Layout
 .row {
     box-sizing: border-box;
     display: flex;
-    padding: 5px;
     flex-wrap: wrap;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 0 10%;
+    padding: 5px;
+}
+
+.colum {
+    flex: 25%;
+    padding: 10px;
 
     img {
         width: 100%;
-        margin: 0;
-        padding: 0;
+        transition: transform 0.3s ease-in-out;
         filter: brightness(0.95);
-        transition: 1s;
 
         &:hover {
             transform: scale(1.05);
-            transition: 1s;
             filter: brightness(1.10);
-            transition: 3s;
-        }
-    }
-    .colum {
-        flex: 25%;
-        padding: 10px;
-
-        @media (max-width: 800px) {
-            flex: 40%;
-            margin-left: 10%;
-            margin-right: 10%;
-        }
-
-        @media (max-width: 600px) {
-            flex: 100%;
         }
     }
 }
 
+@media (max-width: 800px) {
+    .colum {
+        flex: 40%;
+        margin: 0 10%;
+    }
+}
+
+@media (max-width: 600px) {
+    .colum {
+        flex: 100%;
+    }
+}
+
+// Footer
 .pie-pagina {
     width: 100%;
-    background-color: #1e1e1e;
-    color: beige;
+    background-color: $footer-bg;
+    color: $text-color;
     display: flex;
+    justify-content: center;
+    padding: 20px 0;
 
     .grupo-1 {
         width: 100%;
-        margin-left: 5%;
-        margin-right: 5%;
+        margin: 0 5%;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 50px;
-        padding: 45px 0;
+
+        .box1 {
+            h2 {
+                margin: 0;
+            }
+
+            p {
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+        }
 
         .box2 {
-            a {
-                margin: 0 15px;
-                width: 40px;
-                height: 40px;
-                text-align: center;
-                line-height: 40px;
-                background-color: coral;
-                color: beige;
-                border-radius: 50%;
-                transition: 1s;
+            .red-social {
+                display: flex;
+                justify-content: space-around;
 
-                &:hover {
-                    background-color: beige;
-                    color: coral;
+                a {
+                    margin: 0 15px;
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                    background-color: $hover-color;
+                    color: $text-color;
                     border-radius: 50%;
-                    transition: 2s;
+                    transition: background-color 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: $text-color;
+                        color: $hover-color;
+                    }
                 }
             }
         }
@@ -152,11 +171,7 @@ nav a {
 
 .box3 {
     text-align: center;
-    background-color: coral;
+    background-color: $hover-color;
     height: 50px;
     line-height: 50px;
-}
-
-.box1 p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
